@@ -16,8 +16,7 @@ class Inventario_model extends CI_Model {
         $this->db->join('movimiento', 'movimiento.id_producto = productos.id_producto'); 
         $this->db->where('productos.id_producto', $id);
         $query = $this->db->get();
-        return $query;
-        return $q;
+        return $query; 
     }
 
     /**  */
