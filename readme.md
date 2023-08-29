@@ -9,4 +9,4 @@ Pre requisitos
 ```bash
 $ docker-compose up -d
 ```
-Ejecutar el script seed.sql en la DB
+ - Ejecutar el script seed.sql en la DB
