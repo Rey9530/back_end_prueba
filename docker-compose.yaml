@@ -7,15 +7,13 @@ services:
     container_name: prueba-backend-container
     restart: always
     ports:
-      - 80:80
+      - 800:80
     volumes:
       - ./:/var/www/html
     depends_on:
       - db
     networks:
       - pruebaBackendNetwork
-
-
 
   db:
     image: mysql:8.0.31
