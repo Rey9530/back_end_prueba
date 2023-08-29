@@ -1,0 +1,42 @@
+version: '3.1'
+
+services:
+
+  backend:
+    image: prueba-backend:latest
+    container_name: prueba-backend-container
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - pruebaBackendNetwork
+
+
+
+  db:
+    image: mysql:8.0.31
+    container_name: bdPrueba
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - pruebaBackendNetwork
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql1234
+      MYSQL_DATABASE: mysqldb
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: mysql1234
+  
+networks:
+  pruebaBackendNetwork:
+
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
