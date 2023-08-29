@@ -3,9 +3,9 @@ BackEnd Prueba técnica
 ###################
 
 ## Pasos para hacer levantar
-Pre requisitos
+Pre requisitos 
  - Tener Docker Instalado
-
+Pasos:
 ```bash
 $ docker-compose up -d
 ```
