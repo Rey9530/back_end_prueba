@@ -13,8 +13,8 @@ services:
     depends_on:
       - db
     networks:
-      - pruebaBackendNetwork
-
+      - html_pruebaBackendNetwork
+ 
   db:
     image: mysql:8.0.31
     container_name: bdPrueba
@@ -23,7 +23,7 @@ services:
     ports:
       - 3306:3306
     networks:
-      - pruebaBackendNetwork
+      - html_pruebaBackendNetwork
     environment:
       MYSQL_ROOT_PASSWORD: mysql1234
       MYSQL_DATABASE: mysqldb
@@ -31,7 +31,9 @@ services:
       MYSQL_PASSWORD: mysql1234
   
 networks:
-  pruebaBackendNetwork:
+  html_pruebaBackendNetwork:
+    external: true
+      
 
   # adminer:
   #   image: adminer
