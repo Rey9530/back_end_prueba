@@ -14,15 +14,30 @@ class Inventario extends REST_Controller {
     {
         $id = $this->input->get('id');
         $res = []; 
-        $data = $this->inventario->get_all(); 
-        $res['message'] = 'success get all data';  
-        if($data) {
-            $res['error'] = false;
-            $res['data'] = $data->result();    
-            
-        }else {
-            $res['error'] = true;
-            $res['message'] = 'failed get data';
+        if(!empty($id)) { 
+
+            $data = $this->inventario->get_by_id($id); 
+            $res['message'] = 'success get all data';  
+            if($data) {
+                $res['error'] = false;
+                $res['data'] = $data->result();    
+                
+            }else {
+                $res['error'] = true;
+                $res['message'] = 'failed get data';
+            } 
+        }else{
+
+            $data = $this->inventario->get_all(); 
+            $res['message'] = 'success get all data';  
+            if($data) {
+                $res['error'] = false;
+                $res['data'] = $data->result();    
+                
+            }else {
+                $res['error'] = true;
+                $res['message'] = 'failed get data';
+            } 
         }
         $this->response($res, 200);        
     }

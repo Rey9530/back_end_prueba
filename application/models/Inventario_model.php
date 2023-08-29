@@ -11,7 +11,12 @@ class Inventario_model extends CI_Model {
     /** Implement function get_by_id for get row with id our productos table */
     public function get_by_id($id)
     {        
-        $q = $this->db->get_where("inventario", ['id_producto' => $id]);
+        $this->db->select('*');    
+        $this->db->from('productos');
+        $this->db->join('movimiento', 'movimiento.id_producto = productos.id_producto'); 
+        $this->db->where('productos.id_producto', $id);
+        $query = $this->db->get();
+        return $query;
         return $q;
     }
 
