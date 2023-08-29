@@ -1,0 +1,694 @@
+{
+	"info": {
+		"_postman_id": "05e70e8a-1950-437d-80e0-2943a0f8093e",
+		"name": "Prueba Tecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20360194"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/producto?id=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"producto"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/producto?id=1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"producto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:19:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success get data by id\",\n    \"error\": false,\n    \"data\": [\n        {\n            \"id_producto\": \"1\",\n            \"nombre\": \"Producto\",\n            \"descripcion\": \"Descripcion\",\n            \"estado\": \"1\",\n            \"precio\": \"3.3\",\n            \"fecha_creacion\": \"2023-08-28 23:53:12\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/producto"
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BASE_URL}}/producto"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:23:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "491"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success get all data\",\n    \"error\": false,\n    \"data\": [\n        {\n            \"id_producto\": \"6\",\n            \"nombre\": \"nombre\",\n            \"descripcion\": \"descripcion\",\n            \"estado\": \"1\",\n            \"precio\": \"1.26\",\n            \"fecha_creacion\": \"2023-08-29 00:03:38\"\n        },\n        {\n            \"id_producto\": \"13\",\n            \"nombre\": \"Producto 2\",\n            \"descripcion\": \"Este es el producto 2\",\n            \"estado\": \"1\",\n            \"precio\": \"1.262\",\n            \"fecha_creacion\": \"2023-08-29 00:20:38\"\n        },\n        {\n            \"id_producto\": \"14\",\n            \"nombre\": \"Producto 3\",\n            \"descripcion\": \"Este es el producto 3\",\n            \"estado\": \"1\",\n            \"precio\": \"1.262\",\n            \"fecha_creacion\": \"2023-08-29 00:20:47\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"Producto 4\",\n    \"descripcion\":\"Este es el producto 4\",\n    \"precio\":1.262\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/producto/"
+					},
+					"response": [
+						{
+							"name": "Insert",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\":\"Producto 4\",\n    \"descripcion\":\"Este es el producto 4\",\n    \"precio\":1.262\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BASE_URL}}/producto/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:23:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"insert success\",\n    \"data\": {\n        \"nombre\": \"Producto 4\",\n        \"descripcion\": \"Este es el producto 4\",\n        \"precio\": 1.262\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"Producto1\",\n    \"descripcion\":\"Descripcion1\",\n    \"precio\":3.3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/producto?id=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"producto"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\":\"Producto1\",\n    \"descripcion\":\"Descripcion1\",\n    \"precio\":3.3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/producto?id=1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"producto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:23:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"update success\",\n    \"data\": {\n        \"nombre\": \"Producto1\",\n        \"descripcion\": \"Descripcion1\",\n        \"precio\": 3.3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/producto?id=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"producto"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/producto?id=1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"producto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:22:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"delete success\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Inventario",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/inventario"
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BASE_URL}}/producto"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:23:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "491"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success get all data\",\n    \"error\": false,\n    \"data\": [\n        {\n            \"id_producto\": \"6\",\n            \"nombre\": \"nombre\",\n            \"descripcion\": \"descripcion\",\n            \"estado\": \"1\",\n            \"precio\": \"1.26\",\n            \"fecha_creacion\": \"2023-08-29 00:03:38\"\n        },\n        {\n            \"id_producto\": \"13\",\n            \"nombre\": \"Producto 2\",\n            \"descripcion\": \"Este es el producto 2\",\n            \"estado\": \"1\",\n            \"precio\": \"1.262\",\n            \"fecha_creacion\": \"2023-08-29 00:20:38\"\n        },\n        {\n            \"id_producto\": \"14\",\n            \"nombre\": \"Producto 3\",\n            \"descripcion\": \"Este es el producto 3\",\n            \"estado\": \"1\",\n            \"precio\": \"1.262\",\n            \"fecha_creacion\": \"2023-08-29 00:20:47\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/inventario"
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BASE_URL}}/producto"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:23:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "491"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success get all data\",\n    \"error\": false,\n    \"data\": [\n        {\n            \"id_producto\": \"6\",\n            \"nombre\": \"nombre\",\n            \"descripcion\": \"descripcion\",\n            \"estado\": \"1\",\n            \"precio\": \"1.26\",\n            \"fecha_creacion\": \"2023-08-29 00:03:38\"\n        },\n        {\n            \"id_producto\": \"13\",\n            \"nombre\": \"Producto 2\",\n            \"descripcion\": \"Este es el producto 2\",\n            \"estado\": \"1\",\n            \"precio\": \"1.262\",\n            \"fecha_creacion\": \"2023-08-29 00:20:38\"\n        },\n        {\n            \"id_producto\": \"14\",\n            \"nombre\": \"Producto 3\",\n            \"descripcion\": \"Este es el producto 3\",\n            \"estado\": \"1\",\n            \"precio\": \"1.262\",\n            \"fecha_creacion\": \"2023-08-29 00:20:47\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Ingresar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_producto\":6,\n    \"cantidad\":5,\n    \"descripcion\":\"compra por comprar 2\",\n    \"monto_unitario\":0.9\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/inventario/"
+					},
+					"response": [
+						{
+							"name": "Insert",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\":\"Producto 4\",\n    \"descripcion\":\"Este es el producto 4\",\n    \"precio\":1.262\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BASE_URL}}/producto/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:23:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"insert success\",\n    \"data\": {\n        \"nombre\": \"Producto 4\",\n        \"descripcion\": \"Este es el producto 4\",\n        \"precio\": 1.262\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Descargar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_producto\":6,\n    \"cantidad\":5,\n    \"descripcion\":\"Descargo por venta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/inventario"
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\":\"Producto1\",\n    \"descripcion\":\"Descripcion1\",\n    \"precio\":3.3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/producto?id=1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"producto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 29 Aug 2023 00:23:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.34"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"update success\",\n    \"data\": {\n        \"nombre\": \"Producto1\",\n        \"descripcion\": \"Descripcion1\",\n        \"precio\": 3.3\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://backend.relex-dev.com/",
+			"type": "string"
+		}
+	]
+}
